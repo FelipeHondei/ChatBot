@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot com API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <img src="Icon.jpg" alt="Logo" class="logo">
+                <span>Assistente Virtual</span>
+            </div>
+            <div class="connection-status" id="connectionStatus">Desconectado</div>
+            <button class="settings-button" id="settingsButton">⚙️</button>
+        </div>
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-icon">👋</div>
+        <h1 class="welcome-title">Bem-vindo(a) ao Chat!</h1>
+        <p class="welcome-text">Para começar, configure o endereço da API do seu chatbot.</p>
+        <div class="form-group" style="width: 100%; max-width: 300px; margin-bottom: 1rem;">
+            <label for="apiUrl">URL da API:</label>
+            <input type="text" id="apiUrlInit" placeholder="http://localhost:5000" value="http://localhost:5000">
+            <div class="error-message" id="apiErrorInit">URL inválida ou API indisponível</div>
+        </div>
+        <button class="start-chat-btn" id="startChatBtn">Conectar e Iniciar</button>
+    </div>
+    
+    <div class="chat-messages" id="chatMessages" style="display: none;">
+        <!-- Mensagens aparecerão aqui -->
+    </div>
+    
+    <div class="typing-indicator" id="typingIndicator">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    
+    <div class="chat-input-area" id="chatInputArea" style="display: none;">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem...">
+        <button class="send-button" id="sendButton" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="settings-panel" id="settingsPanel">
+    <div class="settings-header">
+        <h2 class="settings-title">Configurações</h2>
+        <button class="close-settings" id="closeSettings">✕</button>
+    </div>
+    <div class="settings-form">
+        <div class="form-group">
+            <label for="apiUrl">URL da API:</label>
+            <input type="text" id="apiUrl" placeholder="http://localhost:5000">
+            <div class="error-message" id="apiError">URL inválida ou API indisponível</div>
+        </div>
+        <button class="save-settings" id="saveSettings">Salvar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
